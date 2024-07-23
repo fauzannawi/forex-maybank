@@ -1,0 +1,6 @@
+xhtml2pdf
+pandas
+beautifulsoup4
+requests
+datetime
+re

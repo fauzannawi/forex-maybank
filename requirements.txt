@@ -1,6 +1,5 @@
-xhtml2pdf
+html2image
 pandas
 beautifulsoup4
 requests
 datetime
-re

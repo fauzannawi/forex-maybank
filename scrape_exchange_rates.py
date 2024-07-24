@@ -3,6 +3,7 @@ from bs4 import BeautifulSoup
 import pandas as pd
 from datetime import date, datetime
 import re
+from html2image import Html2Image
 
 def scrape_maybank_forex_rates():
     """Scrapes Maybank's forex rates, saves to CSV/PNG if updated."""

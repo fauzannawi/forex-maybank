@@ -2,7 +2,7 @@ name: Scrape Exchange Rates
 
 on:
   schedule:
-    - cron: "6 3 * * *"  # Run daily at midnight UTC
+    - cron: "33 3 * * *"  # Run daily at midnight UTC
 
 jobs:
   scrape_and_store:

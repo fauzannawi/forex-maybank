@@ -28,4 +28,5 @@ People manually save the published exchange rates from Maybank for purposes such
 I tried to automate this process, so that we don't miss any day. And the person in charge to download the rate everyday, can focus on other value creation.
 
 ## Future plan
+- sort rates in folders, year, month
 - Action re-run in few hours in case of no update on the site

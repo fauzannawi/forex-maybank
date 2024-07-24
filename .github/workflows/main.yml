@@ -17,7 +17,7 @@ jobs:
           python-version: '3.x'
 
       - name: Install dependencies
-        run: pip install requests beautifulsoup4 pandas xhtml2pdf datetime
+        run: pip install requests beautifulsoup4 pandas html2image datetime
 
       - name: Run scraping script
         run: python scrape_exchange_rates.py # Assuming script name is scrape_exchange_rates.py

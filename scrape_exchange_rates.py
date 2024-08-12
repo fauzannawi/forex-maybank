@@ -28,13 +28,18 @@ def scrape_maybank_forex_rates():
     date_text = date_element.get_text()
     date_pattern = r"\d{1,2}\s+[a-z]{3}\s+\d{4}\s+\d{2}:\d{2}:\d{2}"
     date_match = re.search(date_pattern, date_text)
-
     if not date_match:
         print("Date not found or invalid format.")
-        return
-
-    forex_date = datetime.strptime(date_match.group(), '%d %b %Y %H:%M:%S')
-
+        print("Trying alternate Date format") #hotfix for alternate date format , M d, YYYY hh:mm AM/PM i.e. Aug 12, 2024 02:48 AM
+        date_pattern = r"[a-z]{3}\s+\d{1,2},\s+\d{4}\s+\d{2}:\d{2}\s+[a-z]{2}"
+        date_match = re.search(date_pattern, date_text, re.IGNORECASE)
+        forex_date = datetime.strptime(date_match.group(), '%b %d, %Y %H:%M %p')
+        if not date_match:
+            print("Alternate date not found or invalid format.")
+            return
+    else:
+        forex_date = datetime.strptime(date_match.group(), '%d %b %Y %H:%M:%S')    
+    
     # Check if rates are up-to-date
     if forex_date.date() != date.today():
         print("Rates not yet updated.")

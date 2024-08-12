@@ -20,7 +20,7 @@ jobs:
         run: pip install requests beautifulsoup4 pandas html2image datetime
 
       - name: Run scraping script
-        run: python scrape_exchange_rates.py # Assuming script name is scrape_exchange_rates.py
+        run: python scrape_exchange_rates.py
 
       - name: Commit changes
         run: |
